@@ -32,9 +32,10 @@ graph TD
     classDef test fill:#4e79a7,stroke:#333,stroke-width:1px;
     classDef code fill:#59a14f,stroke:#333,stroke-width:1px;
     classDef decision fill:#f28e2b,stroke:#333,stroke-width:1px;
-    classDef end fill:#e15759,stroke:#333,stroke-width:1px;
+    classDef endNode fill:#e15759,stroke:#333,stroke-width:1px;
     
-    class Start,End start;
+    class Start start;
+    class End endNode;
     class WriteTest,RunTest,RunTest2,RefactorTest,RunAllTests test;
     class WriteCode,ReviseCode,Refactor,FixCode code;
     class TestFail,TestPass,AllTestsPass,NextFeature decision;

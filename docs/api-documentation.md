@@ -6,21 +6,33 @@
 
 ```mermaid
 graph LR
-    Client[Клиент] --> Auth[/api/auth/*]
-    Client --> Users[/api/users/*]
-    Client --> Products[/api/products/*]
-    Client --> Orders[/api/orders/*]
+    Client[Клиент]
+    Auth[/api/auth/*]
+    Users[/api/users/*]
+    Products[/api/products/*]
+    Orders[/api/orders/*]
+    AuthService[Сервис Аутентификации]
+    UserService[Сервис Пользователей]
+    ProductService[Сервис Продуктов]
+    OrderService[Сервис Заказов]
+    DB[(База данных)]
+    NotificationService[Сервис Уведомлений]
     
-    Auth --> AuthService[Сервис Аутентификации]
-    Users --> UserService[Сервис Пользователей]
-    Products --> ProductService[Сервис Продуктов]
-    Orders --> OrderService[Сервис Заказов]
+    Client --> Auth
+    Client --> Users
+    Client --> Products
+    Client --> Orders
     
-    AuthService --> DB[(База данных)]
+    Auth --> AuthService
+    Users --> UserService
+    Products --> ProductService
+    Orders --> OrderService
+    
+    AuthService --> DB
     UserService --> DB
     ProductService --> DB
     OrderService --> DB
-    OrderService --> NotificationService[Сервис Уведомлений]
+    OrderService --> NotificationService
     
     classDef client fill:#42b883,stroke:#333,stroke-width:1px;
     classDef endpoint fill:#4e79a7,stroke:#333,stroke-width:1px;
